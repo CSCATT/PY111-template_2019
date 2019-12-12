@@ -3,6 +3,8 @@ My little Stack
 """
 from typing import Any
 
+stack = []
+
 
 def push(elem: Any) -> None:
 	"""
@@ -11,7 +13,13 @@ def push(elem: Any) -> None:
 	:param elem: element to be pushed
 	:return: Nothing
 	"""
+
 	print(elem)
+
+	global stack
+	stack.append(elem)
+
+
 	return None
 
 
@@ -21,7 +29,17 @@ def pop() -> Any:
 
 	:return: popped element
 	"""
-	return None
+
+	global stack
+
+	if stack:
+		print(stack)
+		return stack[-1]
+
+	else:
+		return None
+
+
 
 
 def peek(ind: int = 0) -> Any:
@@ -41,4 +59,13 @@ def clear() -> None:
 
 	:return: None
 	"""
+
+	global stack
+	stack = []
+
 	return None
+
+
+# if __name__ == "__main__":
+# 	push(1)
+# 	print (stack)
