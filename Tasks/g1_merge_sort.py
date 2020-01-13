@@ -7,6 +7,7 @@ _Tt = TypeVar("_Tt")
 
 read: http://py-algorithm.blogspot.com/2012/01/blog-post.html
 read: https://webdevblog.ru/algoritmy-sortirovki-v-python/
+check this: http://sorting.at/
 
 
 """
