@@ -13,13 +13,13 @@ read: https://webdevblog.ru/algoritmy-sortirovki-v-python/
 
 
 def sort(container: Collection[_Tt]) -> Collection[_Tt]:
-	"""
-	Sort input container with merge sort
+    """
+    Sort input container with merge sort
 
-	:param container: container of elements to be sorted
-	:return: container sorted in ascending order
-	"""
-	return container
+    :param container: container of elements to be sorted
+    :return: container sorted in ascending order
+    """
+    return container
 
 def merge(left_list, right_list):
     sorted_list = []
@@ -29,6 +29,7 @@ def merge(left_list, right_list):
     for _ in range(left_list_length + right_list_length):
         if left_list_index < left_list_length and right_list_index < right_list_length:
             # Мы проверяем, какое значение с начала каждого списка меньше
+
             # Если элемент в начале левого списка меньше, добавляем его в отсортированный список
             if left_list[left_list_index] <= right_list[right_list_index]:
                 sorted_list.append(left_list[left_list_index])
@@ -54,16 +55,26 @@ def merge_sort(nums):
         return nums
     # Используем деление с округленим по наименьшему целому для получения средней точки, индексы должны быть целыми числами
     mid = len(nums) // 2
+
+
     # Сортируем и объединяем каждую половину
     left_list = merge_sort(nums[:mid])
     right_list = merge_sort(nums[mid:])
+
+    print("=====", "\n")
+    print("CS")
+    print("LL", left_list)
+    print("RL", right_list)
+    print("Split LL")
+    print("Split RC", "\n")
+
     # Объединить отсортированные списки в новый
     return merge(left_list, right_list)
 
 
 if __name__ == "__main__":
-	# Проверяем, что все работает
-	random_list_of_nums = [120, 45, 68, 250, 176]
-	random_list_of_nums = merge_sort(random_list_of_nums)
-	print(random_list_of_nums)
-	print()
+    # Проверяем, что все работает
+    random_list_of_nums = [120, 45, 68, 250, 176]
+    random_list_of_nums = merge_sort(random_list_of_nums)
+    print(random_list_of_nums)
+    print()
